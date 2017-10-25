@@ -8,10 +8,10 @@ client.on('ready', () => {
 client.on('message', msg => {
     const command = msg.content.split(" ")[0];
     const argument = parseInt(msg.content.split(" ")[1]);
-
+    const username = msg.author.username;
     if(command==="!roll"){
-        const result = Math.floor((Math.random() * argument)+  1);
-        msg.reply(result)        
+        const result = Math.floor((Math.random() * argument)+  1);	
+	msg.channel.send(username + " just rolled " + result + "!");
     }
 });
 
